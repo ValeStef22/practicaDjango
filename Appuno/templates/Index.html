@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a class="btn btn-success" href="{% url 'crear' %}">Crear</a>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Categoria</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+  {% for reco in tb %}
+
+     <tr>
+      <th scope="row"> {{ reco.id }} </th>
+      <td>{{reco.titulo}}</td>
+      <td>{{reco.autor}}</td>
+      <td>{{reco.categoria}}</td>
+    </tr>
+
+
+  {% endfor %}
+
+
+<!--    <tr>-->
+<!--      <th scope="row">2</th>-->
+<!--      <td>Jacob</td>-->
+<!--      <td>Thornton</td>-->
+<!--      <td>@fat</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th scope="row">3</th>-->
+<!--      <td colspan="2">Larry the Bird</td>-->
+<!--      <td>@twitter</td>-->
+<!--    </tr>-->
+  </tbody>
+</table>
+
+{% endblock %}

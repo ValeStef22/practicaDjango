@@ -1,0 +1,23 @@
+
+
+{% extends 'base.html' %}
+
+<!-- #este contneido es dinamico es decir lo que se cambiara consecutivanete  -->
+{% block content %}
+
+<div class="card mt-3 ">
+
+
+    <div class="card-header">
+        crear libro
+    </div>
+
+    <div class="card-body">
+
+        {% include 'form.html' %}
+
+
+    </div>
+</div>
+
+{% endblock %}

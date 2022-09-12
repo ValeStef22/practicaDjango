@@ -1,0 +1,31 @@
+<form method="post" >
+
+    {% csrf_token %}
+
+<!- Este for permite recorrer formulario en base al modelo creado ->
+
+{% for campo in formulario %}
+
+    <div class="mb-3" >
+
+        <label class="form-label" >
+             <strong> {{ campo.label }}: </strong>
+        </label>
+<!-- Este if sirve para mostrar el combo  -->
+        {% if campo.field.widget.input_type != 'select' %}
+
+        <input class="form-control" placeholder="{{campo.label}}"  name="{{campo.name}}"  >
+
+        {% else %}
+
+        {{ formulario.categoria }}
+
+        {% endif %}
+
+    </div>
+
+{% endfor %}
+
+    <button class="mt-3 btn btn-success " type="submit">enviar</button>
+
+</form>
